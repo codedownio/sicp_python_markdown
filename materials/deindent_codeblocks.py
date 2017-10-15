@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import cgi
 import re
 import sys
 
@@ -20,7 +21,12 @@ def tryReadIndentedBlock(codeLines, i, linesToReturn):
     return i
 
 def makeOutput(text):
-    return '<html><div class="codeparent python"><pre class="stdout"><code>%s</code></pre></div></html>\n' % text
+    try:
+        escaped = cgi.escape(text).encode('ascii', 'xmlcharrefreplace')
+        return '<html><div class="codeparent python"><pre class="stdout"><code>%s</code></pre></div></html>\n' % escaped
+    except:
+        print("FAILED TO HTML ESCAPE STRING: %s" % text)
+        return '<html><div class="codeparent python"><pre class="stdout"><code>%s</code></pre></div></html>\n' % text
 
 def tryReadOutput(codeLines, i, linesToReturn):
     stdout = []
