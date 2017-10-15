@@ -177,22 +177,17 @@
                     </div>
                     <p>The steps of the Python evaluation procedures that produce this result are:</p>
                     <ol class="arabic simple">
-                        <li>The <tt class="docutils literal">def</tt> statement for <tt class="docutils literal">pig_latin</tt> is executed, which</li>
-                        <li>
+                        <li>The <tt class="docutils literal">def</tt> statement for <tt class="docutils literal">pig_latin</tt> is executed, which
                             <ol class="upperalpha simple">
                                 <li>Creates a new <em>pig_latin</em> function object with the stated body, and</li>
-                                <li>Binds the name <tt class="docutils literal">pig_latin</tt> to that function in the current (global)
-                                    frame</li>
+                                <li>Binds the name <tt class="docutils literal">pig_latin</tt> to that function in the current (global) frame</li>
                             </ol>
                         </li>
-                    </ol>
-                    <ol class="arabic simple" start="2">
+
                         <li>The <tt class="docutils literal">def</tt> statement for <tt class="docutils literal">starts_with_a_vowel</tt> is executed similarly</li>
-                        <li>The call expression <tt class="docutils literal"><span class="pre">pig_latin('pun')</span></tt> is evaluated by</li>
-                        <li>
+                        <li>The call expression <tt class="docutils literal"><span class="pre">pig_latin('pun')</span></tt> is evaluated by
                             <ol class="upperalpha simple">
-                                <li>Evaluating the operator and operand sub-expressions by</li>
-                                <li>
+                                <li>Evaluating the operator and operand sub-expressions by
                                     <ol class="upperroman simple">
                                         <li>Looking up the name <tt class="docutils literal">pig_latin</tt> that is bound to the <em>pig_latin</em>
                                             function</li>
@@ -200,23 +195,18 @@
                                     </ol>
                                 </li>
                             </ol>
-                            <ol class="upperalpha simple" start="2">
-                                <li>Applying the function <em>pig_latin</em> to the argument <tt class="docutils literal">'pun'</tt> by</li>
-                            </ol>
-
+                        </li>
+                        <li>Applying the function <em>pig_latin</em> to the argument <tt class="docutils literal">'pun'</tt> by
                             <ol class="upperroman simple">
                                 <li>Adding a local frame that extends the global frame</li>
                                 <li>Binding the formal parameter <tt class="docutils literal">w</tt> to the argument <tt class="docutils literal">'pun'</tt> in that
                                     frame</li>
                                 <li>Executing the body of <em>pig_latin</em> in the environment that starts with
-                                    that frame:</li>
-                                <li>
+                                    that frame:
                                     <ol class="loweralpha simple">
                                         <li>The initial conditional statement has no effect, because the header
                                             expression evaluates to <tt class="docutils literal">False</tt>.</li>
-                                        <li>The final return expression <tt class="docutils literal">pig_latin(w[1:] + w[0])</tt> is evaluated
-                                            by</li>
-                                        <li>
+                                        <li>The final return expression <tt class="docutils literal">pig_latin(w[1:] + w[0])</tt> is evaluated by
                                             <ol class="arabic simple">
                                                 <li>Looking up the name <tt class="docutils literal">pig_latin</tt> that is bound to the
                                                     <em>pig_latin</em> function</li>
@@ -229,8 +219,10 @@
                                     </ol>
                                 </li>
                             </ol>
+
                         </li>
                     </ol>
+
                     <p>As this example illustrates, a recursive function applies correctly, despite
                         its circular character.  The <em>pig_latin</em> function is applied twice, but with a
                         different argument each time.  Although the second call comes from the body of
