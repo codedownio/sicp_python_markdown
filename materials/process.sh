@@ -62,6 +62,9 @@ while true; do
     echo "offset: $offset"
 
     if ! [[ $offset =~ $number_re ]] ; then
+        title=$(cat ${base}.${i}.md | grep "# $chapter.$i" -m 1 | cut -c 3-)
+        echo "title: $title"
+        cp ${base}.${i}.md $OUTFOLDER/"$title.md"
         break
     fi
 
@@ -73,7 +76,6 @@ while true; do
 
     title=$(cat ${base}.${i}.md | grep "# $chapter.$i" -m 1 | cut -c 3-)
     echo "title: $title"
-
     cp ${base}.${i}.md $OUTFOLDER/"$title.md"
 
     i=$[$i+1]
