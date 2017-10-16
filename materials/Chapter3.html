@@ -2248,11 +2248,10 @@ y
                         (including the operator), and then apply the operator's value (which
                         must be a function) to the operands' values.</p>
 
-                    <ul>
-                        <li><p class="first"><strong>Arithmetic:</strong>
-                            Scheme provides the standard arithmetic operators, many with familiar
-                            denotations, although the operators uniformly appear before the operands:</p>
-<pre class="literal-block">
+                    <p class="first"><strong>Arithmetic:</strong>
+                        Scheme provides the standard arithmetic operators, many with familiar
+                        denotations, although the operators uniformly appear before the operands:</p>
+                        <pre class="literal-block">
 &gt;&gt;&gt; ; Semicolons introduce one-line comments.
 &gt;&gt;&gt; ; Compute (3+7+10)*(1000-8) // 992 - 17
 &gt;&gt;&gt; (- (quotient (* (+ 3 7 10) (- 1000 8))) 17)
@@ -2261,11 +2260,10 @@ y
 3
 &gt;&gt;&gt; (- 17)
 -17
-</pre>
-                            <p>Similarly, there are the usual numeric comparison operators,
-                                extended to allow more than two operands:</p>
-                            <blockquote>
-                                <pre class="doctest-block">
+                        </pre>
+                        <p>Similarly, there are the usual numeric comparison operators,
+                            extended to allow more than two operands:</p>
+                        <pre class="doctest-block">
 &gt;&gt;&gt; (&lt; 0 5)
 #t
 &gt;&gt;&gt; (&gt;= 100 10 10 0)
@@ -2277,15 +2275,14 @@ y
 &gt;&gt;&gt; (zero? (- 7 7))
 #t
 </pre>
-                            </blockquote>
-                            <p><tt class="docutils literal">not</tt>, by the way, is a function, not a special form
-                                like <tt class="docutils literal">and</tt> or <tt class="docutils literal">or</tt>, because its operand must always be evaluated,
-                                and so needs no special treatment.</p>
-                        </li>
-                        <li><p class="first"><strong>Lists and Pairs:</strong>
+                        <p><tt class="docutils literal">not</tt>, by the way, is a function, not a special form
+                            like <tt class="docutils literal">and</tt> or <tt class="docutils literal">or</tt>, because its operand must always be evaluated,
+                            and so needs no special treatment.</p>
+
+                        <p class="first"><strong>Lists and Pairs:</strong>
                             A large number of operations deal with pairs and lists (which again are built
                             of pairs and empty lists):</p>
-                            <pre class="literal-block">
+                        <pre class="literal-block">
 &gt;&gt;&gt; (cons 'a 'b)
 (a . b)
 &gt;&gt;&gt; (list 'a 'b)
@@ -2329,8 +2326,8 @@ c
 &gt;&gt;&gt; (list? '(a . b))
 #f
 </pre>
-                        </li>
-                        <li><p class="first"><strong>Equivalence:</strong>  The <tt class="docutils literal">=</tt> operation is for numbers.  For general
+
+                        <p class="first"><strong>Equivalence:</strong>  The <tt class="docutils literal">=</tt> operation is for numbers.  For general
                             equality of values, Scheme distinguishes <tt class="docutils literal">eq?</tt> (like Python's
                             <tt class="docutils literal">is</tt>), <tt class="docutils literal">eqv?</tt> (similar, but is the same as <tt class="docutils literal">=</tt> on numbers),
                             and <tt class="docutils literal">equal?</tt> (compares list structures and strings for content).
@@ -2348,8 +2345,7 @@ c
 &gt;&gt;&gt; (equal? (list 'a 'b) (list 'a 'b))
 #t
 </pre>
-                        </li>
-                        <li><p class="first"><strong>Types:</strong>
+                        <p class="first"><strong>Types:</strong>
                             Each type of value satisfies exactly one of the basic type predicates:</p>
                             <pre class="literal-block">
 &gt;&gt;&gt; (boolean? #f)
@@ -2365,8 +2361,7 @@ c
 &gt;&gt;&gt; (procedure? +)
 #t
 </pre>
-                        </li>
-                        <li><p class="first"><strong>Input and Output:</strong>
+                        <p class="first"><strong>Input and Output:</strong>
                             Scheme interpreters typically run a  read-eval-print loop, but one can
                             also output things under explicit control of the program, using the
                             same functions the interpreter does internally:</p>
@@ -2389,12 +2384,10 @@ ab
 &gt;&gt;&gt; (a b c)
 (a b c)
 </pre>
-                        </li>
-                        <li><p class="first"><strong>Evaluation:</strong>
+                        <p class="first"><strong>Evaluation:</strong>
                             The <tt class="docutils literal">apply</tt> function provides direct access to the function-calling
                             operation:</p>
-                            <blockquote>
-                                <pre class="doctest-block">
+                        <pre class="doctest-block">
 &gt;&gt;&gt; (apply cons '(1 2))
 (1 . 2)
 &gt;&gt;&gt; ;; Apply the function f to the arguments in L after g is
@@ -2404,14 +2397,11 @@ ab
 &gt;&gt;&gt; (compose-list + (lambda (x) (* x x)) '(1 2 3))
 14
 </pre>
-                            </blockquote>
                             <p>An extension allows for some &quot;fixed&quot; arguments at the beginning:</p>
-                            <blockquote>
-                                <pre class="doctest-block">
+                            <pre class="doctest-block">
 &gt;&gt;&gt; (apply + 1 2 '(3 4 5))
 15
 </pre>
-                            </blockquote>
                             <p>The following function is not in <a class="reference external" href="http://people.csail.mit.edu/jaffer/r4rs_toc.html">Revised(4) Scheme</a>, but is
                                 present in our versions of the interpreter (<em>warning:</em> a non-standard
                                 procedure that is not defined this way in later versions of Scheme):</p>
@@ -2423,8 +2413,7 @@ ab
                                 a correct Scheme expression.  This version evaluates its expression
                                 argument in the global environment.  Our interpreter also provides a
                                 way to specify a specific environment for the evaluation:</p>
-                            <blockquote>
-                                <pre class="doctest-block">
+                            <pre class="doctest-block">
 &gt;&gt;&gt; (define (incr n) (lambda (x) (+ n x)))
 &gt;&gt;&gt; (define add5 (incr 5))
 &gt;&gt;&gt; (add5 13)
@@ -2432,9 +2421,6 @@ ab
 &gt;&gt;&gt; (eval 'n (procedure-environment add5))
 5
 </pre>
-                            </blockquote>
-                        </li>
-                    </ul>
                 </div>
                 <div class="section" id="the-logo-language">
                     <span id="logo-language"></span><h2><a class="toc-backref" href="#id24">3.6.2&nbsp;&nbsp;&nbsp;The Logo Language</a></h2>
