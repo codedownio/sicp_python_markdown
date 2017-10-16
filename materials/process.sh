@@ -48,6 +48,8 @@ perl -i -pe 'BEGIN {undef $/;} s/(\$\$[^\$]+\$\$)\n\n\n/$1\n\n/sgm' $TMP
 perl -i -pe 'BEGIN {undef $/;} s/\n\n\n\n(\$\$[^\$]+\$\$)/\n\n$1/sgm' $TMP
 perl -i -pe 'BEGIN {undef $/;} s/\n\n\n(\$\$[^\$]+\$\$)/\n\n$1/sgm' $TMP
 
+# Make sure bullet points don't start with extra whitespace
+sed -i 's/^- \s*/- /g' $TMP
 
 # Split into sub-sections
 chapter=$(echo $FILE | sed -rn 's/[^[:digit:]]*([[:digit:]]+)[^[:digit:]]*/\1/p')
