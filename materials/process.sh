@@ -31,6 +31,9 @@ sed -i.old '1s;^;\n[[table-of-contents]]\n\n;' $TMP
 # Remove links from headers
 perl -i -pe 's/^(#+) \[([\d\.]+)[^\x00-\x7F]*(.+)\]\(.*\)/\1 \2 \3/g' $TMP
 
+# Remove stray links from TOC backrefs etc.
+perl -i -pe 's/^\[.*\]\{.*\}//g' $TMP
+
 # Fix up code blocks
 ./deindent_codeblocks.py $TMP $TMP
 
