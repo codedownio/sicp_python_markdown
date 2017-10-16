@@ -1745,14 +1745,13 @@ Exp('add', [2, Exp('mul', [4, 6])])
                         <em>all</em> operations take the form of function calls.
                         Here, we will describe a representative subset of the full Scheme language
                         described in the report.</p>
-                    <table class="docutils footnote" frame="void" id="id2" rules="none">
-                        <colgroup><col class="label" /><col /></colgroup>
-                        <tbody valign="top">
-                            <tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Regrettably, this has become less true in more recent revisions of
-                                the Scheme language, such as the <em>Revised(6) Report</em>, so here, we'll
-                                stick with previous versions.</td></tr>
-                        </tbody>
-                    </table>
+
+                    <p>
+                        <a class="fn-backref" href="#id1">[1]</a>Regrettably, this has become less true in more recent revisions of
+                        the Scheme language, such as the <em>Revised(6) Report</em>, so here, we'll
+                        stick with previous versions.
+                    </p>
+
                     <p>There are several implementations of Scheme available, which add on various
                         additional procedures.  At Berkeley, we've used a
                         <a class="reference external" href="http://inst.eecs.berkeley.edu/~scheme/">modified version of the Stk interpreter</a>,
@@ -1772,17 +1771,15 @@ fib
 &gt;&gt;&gt; '(1 (7 19))
 (1 (7 19))
 </pre>
-                    <table class="docutils footnote" frame="void" id="id3" rules="none">
-                        <colgroup><col class="label" /><col /></colgroup>
-                        <tbody valign="top">
-                            <tr><td class="label">[2]</td><td>In our examples, we use the same notation as for Python: <tt class="docutils literal">&gt;&gt;&gt;</tt> and
-                                <tt class="docutils literal">...</tt> to indicate lines input to the interpreter and unprefixed
-                                lines to indicate output.  In reality, Scheme interpreters use
-                                different prompts.  STk, for example, prompts with <tt class="docutils literal">STk&gt;</tt> and
-                                does not prompt for continuation lines.  The Python conventions,
-                                however, make it clearer what is input and what is output.</td></tr>
-                        </tbody>
-                    </table>
+                    <p>
+                        <a class="fn-backref" href="#id1">[2]</a> In our examples, we use the same notation as for Python: <tt class="docutils literal">&gt;&gt;&gt;</tt> and
+                        <tt class="docutils literal">...</tt> to indicate lines input to the interpreter and unprefixed
+                        lines to indicate output.  In reality, Scheme interpreters use
+                        different prompts.  STk, for example, prompts with <tt class="docutils literal">STk&gt;</tt> and
+                        does not prompt for continuation lines.  The Python conventions,
+                        however, make it clearer what is input and what is output.
+                    </p>
+
                     <p><strong>Values in Scheme.</strong>
                         Values in Scheme generally have their counterparts in Python.</p>
 
@@ -2198,7 +2195,7 @@ y
                             values of the variables they mention; that only happens later, when
                             they are called.  For example:</p>
                             <pre class="last literal-block">
-                                                                             (letrec ((even?
+(letrec ((even?
       (lambda (n)
              (if (zero? n)
                   #t
@@ -2255,7 +2252,7 @@ y
                         <li><p class="first"><strong>Arithmetic:</strong>
                             Scheme provides the standard arithmetic operators, many with familiar
                             denotations, although the operators uniformly appear before the operands:</p>
-                            <pre class="literal-block">
+<pre class="literal-block">
 &gt;&gt;&gt; ; Semicolons introduce one-line comments.
 &gt;&gt;&gt; ; Compute (3+7+10)*(1000-8) // 992 - 17
 &gt;&gt;&gt; (- (quotient (* (+ 3 7 10) (- 1000 8))) 17)
