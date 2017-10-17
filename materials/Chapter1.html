@@ -1106,7 +1106,7 @@ called a <em>docstring</em>, which must be indented along with the function body
 Docstrings are conventionally triple quoted. The first line describes the job
 of the function in one line. The following lines can describe arguments and
 clarify the behavior of the function:</p>
-<pre class="literal-block">
+<pre class="doctest-block">
 &gt;&gt;&gt; def pressure(v, t, n):
         &quot;&quot;&quot;Compute the pressure in pascals of an ideal gas.
 
@@ -1139,7 +1139,7 @@ calling that function, arguments with default values are optional. If they are
 not provided, then the default value is bound to the formal parameter name
 instead. For instance, if an application commonly computes pressure for one mole
 of particles, this value can be provided as a default:</p>
-<pre class="literal-block">
+<pre class="doctest-block">
 &gt;&gt;&gt; k_b=1.38e-23  # Boltzmann's constant
 &gt;&gt;&gt; def pressure(v, t, n=6.022e23):
         &quot;&quot;&quot;Compute the pressure in pascals of an ideal gas.
@@ -1516,7 +1516,7 @@ directly in the docstring of a function. The first line of a docstring should
 contain a one-line description of the function, followed by a blank line.  A
 detailed description of arguments and behavior may follow. In addition, the
 docstring may include a sample interactive session that calls the function:</p>
-<pre class="literal-block">
+<pre class="doctest-block">
 &gt;&gt;&gt; def sum_naturals(n):
         &quot;&quot;&quot;Return the sum of the first n natural numbers
 
