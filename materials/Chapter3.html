@@ -1741,13 +1741,13 @@ Exp('add', [2, Exp('mul', [4, 6])])
                         We'll touch on highlights here.  We've used examples from
                         the Report in the descriptions below..</p>
                     <p>Despite its simplicity, Scheme is a real programming language and in many ways
-                        is similar to Python, but with a minimum of &quot;syntactic sugar&quot;<a class="footnote-reference" href="#id2" id="id1">[1]</a>.  Basically,
+                        is similar to Python, but with a minimum of &quot;syntactic sugar&quot;<a href="#id1">[1]</a>.  Basically,
                         <em>all</em> operations take the form of function calls.
                         Here, we will describe a representative subset of the full Scheme language
                         described in the report.</p>
 
                     <p>
-                        <a class="fn-backref" href="#id1">[1]</a>Regrettably, this has become less true in more recent revisions of
+                        <a href="#id1">[1]</a> Regrettably, this has become less true in more recent revisions of
                         the Scheme language, such as the <em>Revised(6) Report</em>, so here, we'll
                         stick with previous versions.
                     </p>
@@ -1772,7 +1772,7 @@ fib
 (1 (7 19))
 </pre>
                     <p>
-                        <a class="fn-backref" href="#id1">[2]</a> In our examples, we use the same notation as for Python: <tt class="docutils literal">&gt;&gt;&gt;</tt> and
+                        <a href="#id1">[2]</a> In our examples, we use the same notation as for Python: <tt class="docutils literal">&gt;&gt;&gt;</tt> and
                         <tt class="docutils literal">...</tt> to indicate lines input to the interpreter and unprefixed
                         lines to indicate output.  In reality, Scheme interpreters use
                         different prompts.  STk, for example, prompts with <tt class="docutils literal">STk&gt;</tt> and
@@ -2260,10 +2260,10 @@ y
 3
 &gt;&gt;&gt; (- 17)
 -17
-                        </pre>
+</pre>
                         <p>Similarly, there are the usual numeric comparison operators,
                             extended to allow more than two operands:</p>
-                        <pre class="doctest-block">
+                        <pre class="literal-block">
 &gt;&gt;&gt; (&lt; 0 5)
 #t
 &gt;&gt;&gt; (&gt;= 100 10 10 0)
@@ -2387,7 +2387,7 @@ ab
                         <p class="first"><strong>Evaluation:</strong>
                             The <tt class="docutils literal">apply</tt> function provides direct access to the function-calling
                             operation:</p>
-                        <pre class="doctest-block">
+                        <pre class="literal-block">
 &gt;&gt;&gt; (apply cons '(1 2))
 (1 . 2)
 &gt;&gt;&gt; ;; Apply the function f to the arguments in L after g is
@@ -2398,7 +2398,7 @@ ab
 14
 </pre>
                             <p>An extension allows for some &quot;fixed&quot; arguments at the beginning:</p>
-                            <pre class="doctest-block">
+                            <pre class="literal-block">
 &gt;&gt;&gt; (apply + 1 2 '(3 4 5))
 15
 </pre>
@@ -2413,7 +2413,7 @@ ab
                                 a correct Scheme expression.  This version evaluates its expression
                                 argument in the global environment.  Our interpreter also provides a
                                 way to specify a specific environment for the evaluation:</p>
-                            <pre class="doctest-block">
+                            <pre class="literal-block">
 &gt;&gt;&gt; (define (incr n) (lambda (x) (+ n x)))
 &gt;&gt;&gt; (define add5 (incr 5))
 &gt;&gt;&gt; (add5 13)
@@ -2876,7 +2876,7 @@ empty
                         represented as a flat sequence of tokens. Finally, parsing does not determine
                         the type of even primitive expressions such as numbers because Logo does not
                         have a rich type system; instead, every element is a word or a sentence.</p>
-                    <pre class="doctest-block">
+                    <pre class="literal-block">
 &gt;&gt;&gt; parse_line('print sum 10 difference 7 3')
 ['print', 'sum', '10', 'difference', '7', '3']
 </pre>
@@ -2884,7 +2884,7 @@ empty
                         requires that the evaluator resolve the structure of nested expressions.</p>
                     <p>The parser does identify the nested structure of sentences. Sentences within
                         sentences are represented as nested Python lists.</p>
-                    <pre class="doctest-block">
+                    <pre class="literal-block">
 &gt;&gt;&gt; parse_line('print sentence &quot;this [is a [deep] list]')
 ['print', 'sentence', '&quot;this', ['is', 'a', ['deep'], 'list']]
 </pre>
